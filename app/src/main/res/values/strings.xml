@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="stats">Stats</string>
+    <string name="language">Language</string>
+    <string name="button">Button</string>
+    <string name="settings">settings</string>
+    <string name="settingssite">Settingssite</string>
+    <string name="Output">Output</string>
+    <string name="Settings">Settings</string>
+    <string name="string_output" />
+    <string name="test">Test</string>
+    <string name="press_to_start">press to start</string>
+    <string name="go_to_the_dictionary">go_to_the_dictionary</string>
+    <string name="english">English</string>
+    <string name="german">German</string>
+    <string name="add_words_to_the_dictionary">Add words to the dictionary:</string>
+    <string name="dictionary">Dictionary</string>
+    <string name="tickmark">✓</string>
+</resources>
