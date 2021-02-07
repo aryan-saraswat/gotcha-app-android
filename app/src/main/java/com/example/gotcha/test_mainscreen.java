@@ -25,6 +25,8 @@ public class test_mainscreen extends AppCompatActivity {
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String DICT = "dict";
     public static final String LANG_PREFS = "langPrefs";
+    public static final String VIB_PREFS = "vibPrefs";
+    public static final String SOUND_PREFS = "soundPrefs";
     String lang = "";
 
     private static final int RECOGNIZER_RESULT = 1;
@@ -98,6 +100,8 @@ public class test_mainscreen extends AppCompatActivity {
         String[] temp = speechResult.split(" "); //split the string. z.B.: "Hello my name is Dennis" = {"Hello", "my", "name", ..., "Dennis"}
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String words = sharedPreferences.getString(DICT, ""); //getting saved dictionary from shared preferences
+        boolean vib = sharedPreferences.getBoolean(VIB_PREFS, true);
+        boolean sound = sharedPreferences.getBoolean(SOUND_PREFS, true);
 
         //Toast.makeText(getApplicationContext(), words, Toast.LENGTH_SHORT).show();
         String[] dict = words.split(";"); //splitting the words from dictionary and making an array
@@ -112,27 +116,27 @@ public class test_mainscreen extends AppCompatActivity {
 
                     if (j.startsWith(str) && j.length() == profanityLength) {
                         counter = true;
-                        //(MediaPlayer.create(test_mainscreen.this, R.raw.gotchasound)).start();
                         speechText.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shake));//toComment
-                        //Toast.makeText(getApplicationContext(), j, Toast.LENGTH_SHORT).show();
-                        vibrateForTime(500);
+
                     }
                 }
 
                 else {
                     if(j.equals(i)){
                         counter = true;
-                        //(MediaPlayer.create(test_mainscreen.this, R.raw.gotchasound)).start();
                         speechText.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shake));//toComment
-                        //Toast.makeText(getApplicationContext(), j, Toast.LENGTH_SHORT).show();
-                        vibrateForTime(500);
                     }
                 }
             }
         }
 
         if(counter) {
-            (MediaPlayer.create(test_mainscreen.this, R.raw.gotchasound)).start();
+            if (sound) {
+                (MediaPlayer.create(test_mainscreen.this, R.raw.gotchasound)).start();
+            }
+            if (vib) {
+                vibrateForTime(500);
+            }
         }
         //Toast.makeText(getApplicationContext(), String.valueOf(k) + " matches", Toast.LENGTH_SHORT).show();
     }
