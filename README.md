@@ -15,6 +15,6 @@ After it obtains the text from your speech, it performs a search through a dicti
 Since SpeechRecognizer censors actual swear words, some words could be falsely matched with the dictionary, i.e, even if you don't have such a word entered in your dictionary, the app would still detect it as a match and play the "Gotcha!" sound and/or vibrate the phone.
 
 # Improvements to be made
-1. Use Google's Cloud API instead of the SPeechRecognizer class
+1. Use Google's Cloud API instead of the SpeechRecognizer class
 2. Make a statistics page
 3. Include support for more languages
