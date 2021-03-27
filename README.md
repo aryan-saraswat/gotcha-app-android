@@ -4,6 +4,10 @@ This is an app created by Dennis Michel and me, Aryan Saraswat, both students at
 # What you need
 To run the app, you need Android Studio with a minimum of API level 8 running, because SpeechRecognizer was introduced on this level. This is not such a hard requirement to fulfil because all Android apps nowadays are developed with Android 9.0 as standard (which is already level 28).
 
+# Cloning the app to your computer
+Navigate on your computer using Terminal to a directory where you want to store the repository. After you're there, run the command `git clone <link>`, where <link> is the link to the master branch on this repository.<br/>
+After doing so, open Android Studio on your computer, and on the top-left, in the File menu, select "open", navigate to the project you just cloned, and click on it. This should open all the code on your computer on Android Studio.
+
 # How to use the app
 The app comes with basic instructions and a tutorial screen, which covers all you need to know about it. There's a main screen with a red button that you press to make a recording, and the text appears in a textbox after it detects that you're done speaking.
 
